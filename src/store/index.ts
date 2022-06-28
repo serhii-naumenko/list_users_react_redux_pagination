@@ -72,7 +72,7 @@ const rootReducer = (
       return { ...state, users: action.users };
 
     case GET_USERID:
-      return { ...state, userId: action.userId};
+      return { ...state, userId: action.userId };
 
     case GET_ERROR:
       return { ...state, messageError: action.messageError };

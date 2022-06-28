@@ -144,19 +144,19 @@ export const UserForm: React.FC = () => {
       if (nameUser.trim().length > 0) {
         correctUserInfo.name = nameUser;
       }
-      
+
       if (surnameUser.trim().length > 0) {
         correctUserInfo.surname = surnameUser;
       }
-      
+
       if (descUser.trim().length > 0) {
         correctUserInfo.desc = descUser;
       }
-      
+
       if (userId > 0) {
         correctUserInfo.user_id = userId;
       }
-      
+
       if (version > 0) {
         // eslint-disable-next-line no-underscore-dangle
         correctUserInfo.__v = version;
@@ -168,7 +168,7 @@ export const UserForm: React.FC = () => {
       resetFields();
     }
   }, [loadedUsers, nameUser, surnameUser, descUser, userId, version, idCorrectUser, dispatch]);
-  
+
   return (
     <div className={classNames(
       'UserForm',

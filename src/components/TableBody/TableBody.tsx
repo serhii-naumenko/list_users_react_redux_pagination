@@ -18,20 +18,21 @@ export const TableBody: React.FC = () => {
   const handlerRemoveUser = useCallback((idOfUser: number) => {
     deleteUserFromServer(idOfUser);
     const shortenUsers = loadedUsers.filter(user => user.user_id !== idOfUser);
+
     dispatch(actions.getLocalUsers(shortenUsers));
   }, [dispatch, loadedUsers]);
 
   const handlerCorrectUser = useCallback(
     (idOfUser: number) => {
-      const userToCorrect = loadedUsers.find(user => user.user_id === idOfUser)
+      const userToCorrect = loadedUsers.find(user => user.user_id === idOfUser);
 
       if (userToCorrect) {
         dispatch(actions.getIsOpenForm(false));
         dispatch(actions.getIsCorrectForm(true));
         dispatch(actions.getLocalUserId(idOfUser));
       }
-      
-    }, [dispatch, loadedUsers]);
+    }, [dispatch, loadedUsers],
+  );
 
   return (
     <>
@@ -49,7 +50,7 @@ export const TableBody: React.FC = () => {
               <button
                 className="TableBody__body--button"
                 type="button"
-                onClick={(event) => handlerCorrectUser(person.user_id)}
+                onClick={() => handlerCorrectUser(person.user_id)}
               >
                 Correct user
               </button>
