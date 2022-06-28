@@ -2,7 +2,7 @@
 
 Stack: React, React hooks, Redux, Fetch, API.
 Rendering list of users with pagination.
-[DEMO LINK](https://serhii-naumenko.github.io/redux_react_list_pag/)
+[DEMO LINK](https://serhii-naumenko.github.io/list_users_react_redux_pagination/)
 
 Task conditions:
 
